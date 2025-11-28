@@ -30,6 +30,7 @@ function update()
         if not target_pos then
             gcs:send_text(MAV_SEVERITY_INFO, "SCRIPT_TIME: Invalid target position")
             is_running = false
+            vehicle:nav_script_time_done(last_id)
             return update, RUN_INTERVAL_MS
         end
 
